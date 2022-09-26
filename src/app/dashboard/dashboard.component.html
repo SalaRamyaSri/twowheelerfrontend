@@ -1,0 +1,57 @@
+<body>
+    <mat-card>
+        <b><span>Dashboard</span></b>
+    </mat-card>
+    <br>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2 class="title">Registered Users</h2>
+                    <h2 class="title">{{data?.category}}</h2>
+                    <p><button class="button" [routerLink]="['/bike-rental/company']">View Details</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2 class="title">Companies</h2>
+                    <h2 class="title">{{data?.company}}</h2>
+                    <p><button class="button" [routerLink]="['/bike-rental/company']">View Details</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2 class="title">Variants</h2>
+                    <h2 class="title">{{data?.variant}}</h2>
+                    <p><button class="button" [routerLink]="['/bike-rental/variant']">View Details</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2 class="title">Bikes</h2>
+                    <h2 class="title">{{data?.bike}}</h2>
+                    <p><button class="button" [routerLink]="['/bike-rental/bikes']">View Details</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2 class="title">Bookings</h2>
+                    <h2 class="title">{{data?.booking}}</h2>
+                    <p><button class="button" [routerLink]="['/bike-rental/bookings']">View Details</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

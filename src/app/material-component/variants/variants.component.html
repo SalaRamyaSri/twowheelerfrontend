@@ -1,0 +1,96 @@
+<!-- <h2> Available Bike Variants</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Variant ID</th>
+            <th> Variant Name </th>
+            <th> Company</th>
+            <th> Rental </th>
+            <th> Price </th>
+            <th> Photo </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let variant of variants" >
+            <td> {{ variant.id }} </td>
+            <td> {{ variant.variantName }} </td>
+            <td> {{ variant.bikeName }} </td>
+            <td> {{ variant.company }} </td>
+            <td> {{ variant.rental }} </td>
+            <td> {{ variant.price }} </td>
+            <td> {{ variant.photo }} </td>
+            <td>
+                <button (click) = "updateVariant(variant.id)" class = "btn btn-info"> Update</button>
+                <button (click) = "deleteVariant(variant.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "variantDetails(variant.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+
+
+<mat-card>
+    <b><span>Variants</span></b>
+    <button mat-flat-button color="primary" class="float-right" (click)="handleAddAction()">Add Variant</button>
+</mat-card>
+<hr>
+<mat-card>
+    <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Filter</mat-label>
+        <input matInput (Keyup)="applyFilter($event)" #input>
+    </mat-form-field>
+</mat-card>
+<hr>
+<div class="responsive_table">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>Variant ID</th>
+            <td mat-cell *matCellDef="let element">{{element.id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef>Variant Name</th>
+            <td mat-cell *matCellDef="let element">{{element.title}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef>Price</th>
+            <td mat-cell *matCellDef="let element">{{element.price}}</td>
+        </ng-container>
+
+        <!-- <ng-container matColumnDef="photo">
+            <th mat-header-cell *matHeaderCellDef>Photo</th>
+            <td mat-cell *matCellDef="let element">{{element.photo}}</td>
+        </ng-container> -->
+
+        <!-- <ng-container matColumnDef="company_id">
+            <th mat-header-cell *matHeaderCellDef>Company Id</th>
+            <td mat-cell *matCellDef="let element">{{element.company_id}}</td>
+        </ng-container> -->
+
+        <!-- <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>Rental</th>
+            <td mat-cell *matCellDef="let element">{{element.id}}</td>
+        </ng-container> -->
+
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td mat-cell *matCellDef="let element" class="action-link">
+                <button mat-icon-button color="primary" matTooltip="Edit" (click)="handleEditAction(element)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" matTooltip="Delete" (click)="handleDeleteAction(element)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <mat-slide-toggle (change) ="onChange($event.checked, element.id)" 
+                    matTooltip ="Activate or Deactivate Variant"
+                     [checked]="element.status">
+                </mat-slide-toggle>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+        <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>
+    </table>
+
+</div>

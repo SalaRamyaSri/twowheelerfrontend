@@ -1,0 +1,117 @@
+<!-- <div class='content-wrapper p-2'>
+    <div
+      class='container-fluid shadow p-2 bg-white'
+      [ngStyle]="{ minHeight: '88vh' }"
+    >
+      <h4 class='p-2 mb-3 border-bottom border-success'>
+        Booking Details
+      </h4>
+      <div class='form-row'>
+        <div class='col-sm-6'>
+          <div class='card shadow'>
+            <img
+              src={BASE_URL + data?.variant?.photo}
+              class='card-top-img'
+            />
+            <div class='card-body'>
+              <table class='table table-sm'>
+                <tbody>
+                  <tr>
+                    <th>Booking ID</th>
+                    <th>{data?.id}</th>
+                    <th>Customer Name</th>
+                    <th>{data?.customer?.uname}</th>
+                  </tr>
+                  <tr>
+                    <th>From Date</th>
+                    <th>{data?.fromdate}</th>
+                    <th>To Date</th>
+                    <th>{data?.todate}</th>
+                  </tr>
+                  <tr>
+                    <th>Car Variant</th>
+                    <th>{data?.variant?.title}</th>
+                    <th>Price per Day</th>
+                    <th>{data?.variant?.price}</th>
+                  </tr>
+                  <tr>
+                    <th>Booking Date</th>
+                    <th>{data?.bookingdate}</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class='col-sm-6'>
+          <div class='card shadow'>
+            <div class='card-body'>
+              <h5 class='text-center'>Booking Confirmation</h5> -->
+              <!-- {data?.status == 'Pending' ? (
+                <form>
+                  <div class='form-row'>
+                    <div class='col-sm-6'>
+                      <div class='form-group'>
+                        <label>Select Bike *</label>
+                        <select
+                          required
+                          class='form-control form-control-sm'
+                          name='bno'
+                          value={bike}
+                          onChange={(e) => setBike(e.target.value)}
+                        >
+                          <option value>-- Select Bike --</option>
+                          {bikes.map((x, index) => (
+                            <option key={index} value={x.id}>
+                              {x.id}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <input
+                    type='submit'
+                    onClick={handleSubmit}
+                    defaultValue='Confirm Booking'
+                    class='btn btn-outline-success btn-sm float-right'
+                  />
+                </form>
+              ) : (
+                  <h6 class='text-success text-center p-2'>
+                    Booking confirmed
+                  </h6>
+                  <div class='form-row'>
+                    <div class='col-sm-8 p-3'>
+                      <h5>Bike No : {data?.bike?.id}</h5>
+                    </div>
+                  </div>
+                  <div
+                    class='card shadow'
+                    [ngStyle]="{ minHeight: '100%' }"
+                  >
+                    <div class='card-body p-2'>
+                      <h5
+                        class='text-center p-2'
+                        [ngStyle]="{ borderBottom: '2px solid green' }" 
+                      >
+                        Payment History
+                      </h5>
+                      {pmts.map((x) => (
+                        <div class='card shadow p-2 mb-2'>
+                          <p class='p-1 m-0'>Date : {x.pmtdate}</p>
+                          <p class='m-0'>Amount : ₹ {x.amount}</p>
+                          <p class='m-0 font-weight-bold'>
+                            {x.remarks}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+              )} -->
+            <!-- </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->

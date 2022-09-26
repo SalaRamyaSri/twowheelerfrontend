@@ -1,0 +1,90 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row fxLayout="row">
+        <span class="title-center">{{dialogData.action}} Company</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="variantForm">
+        <div fxFlex fxLayout="column">
+           <!-- <div fxLayout="row-wrap">
+            <mat-form-field appearance="fill" fxFlex>
+              <mat-label>id</mat-label>
+               <input matInput formControlName="id" required>
+              <mat-error *ngIf="variantForm.controls.id.touched && variantForm.controls.id.invalid">
+                  <span *ngIf="variantForm.controls.id.errors.required"> This field is mandatory. </span>
+              </mat-error>
+            </mat-form-field>
+         </div> -->
+
+         <div fxLayout="row-wrap">
+            <mat-form-field appearance="fill" fxFlex>
+              <mat-label>Variant Name</mat-label>
+               <input matInput formControlName="title" required>
+              <mat-error *ngIf="variantForm.controls.title.touched && variantForm.controls.title.invalid">
+                  <span *ngIf="variantForm.controls.title.errors.required"> This field is mandatory. </span>
+              </mat-error>
+            </mat-form-field>
+         </div>
+
+         <!-- <div fxLayout="row-wrap">
+            <mat-form-field appearance="fill" fxFlex>
+              <mat-label>Company</mat-label>
+               <input matInput formControlName="company" required>
+              <mat-error *ngIf="variantForm.controls.company.touched && variantForm.controls.company.invalid">
+                  <span *ngIf="variantForm.controls.company.errors.required"> This field is mandatory. </span>
+              </mat-error>
+            </mat-form-field>
+         </div> -->
+
+         <!-- <div fxLayout="row-wrap">
+            <mat-form-field appearance="fill" fxFlex>
+              <mat-label>Photo</mat-label>
+               <input matInput formControlName="photo" required>
+              <mat-error *ngIf="variantForm.controls.photo.touched && variantForm.controls.photo.invalid">
+                  <span *ngIf="variantForm.controls.photo.errors.required"> This field is mandatory. </span>
+              </mat-error>
+            </mat-form-field>
+         </div> -->
+
+         <div fxLayout="row-wrap">
+            <mat-form-field appearance="fill" fxFlex>
+              <mat-label>Price</mat-label>
+               <input matInput formControlName="price" required>
+              <mat-error *ngIf="variantForm.controls.price.touched && variantForm.controls.price.invalid">
+                  <span *ngIf="variantForm.controls.price.errors.required"> This field is mandatory. </span>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" fxFlex>
+                <mat-label>Company</mat-label>
+                <mat-select formControlName="company_id">
+                    <!-- <mat-option *ngIf="let company of companies" [value]="company.id">
+                        {{company.compname}}
+                    </mat-option> -->
+                    <mat-option *ngFor="let company of companies" [value]="company.id">
+                        {{company.compname}}
+                    </mat-option>
+
+                </mat-select>
+            </mat-form-field>
+         </div>
+
+         <!-- <div fxLayout="row-wrap">
+            <mat-form-field appearance="fill" fxFlex>
+              <mat-label>Name</mat-label>
+               <input matInput formControlName="name" required>
+              <mat-error *ngIf="variantForm.controls.name.touched && variantForm.controls.name.invalid">
+                  <span *ngIf="variantForm.controls.name.errors.required"> This field is mandatory. </span>
+              </mat-error>
+            </mat-form-field>
+         </div> -->
+     </div>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+    <button mat-raised-button color="primary" type ="submit" (click)="handleSubmit()"
+    [disabled]="!(variantForm.valid && variantForm.dirty)">{{action}}</button>
+    <button mat-raised-button color="primary" mat-dialog-close>Close</button>
+</mat-dialog-actions>

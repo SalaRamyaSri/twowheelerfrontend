@@ -1,0 +1,107 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row fxLayout="row">
+        <span class="title-center">Login</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="loginForm">
+        <div fxFlex fxLayout="column">
+            <!-- <mat-form-field appearance="fill" fxFlex>
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" required>
+                <mat-error *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid">
+                    <span *ngIf="loginForm.controls.email.errors.required"> This field is mandatory. </span>
+                    <span *ngIf="loginForm.controls.email.errors.pattern"> This field is invalid. </span>
+                </mat-error>
+            </mat-form-field> -->
+
+            <mat-form-field appearance="fill" fxFlex>
+                <mat-label>UserId</mat-label>
+                <input matInput formControlName="userid" required>
+                <mat-error *ngIf="loginForm.controls.userid.touched && loginForm.controls.userid.invalid">
+                    <span *ngIf="loginForm.controls.userid.errors.required"> This field is mandatory. </span>
+                    <!-- <span *ngIf="loginForm.controls.userName.errors.pattern"> This field is invalid. </span> -->
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" fxFlex>
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="pwd" type="password" required>
+                <mat-error *ngIf="loginForm.controls.pwd.touched && loginForm.controls.pwd.invalid">
+                    <span *ngIf="loginForm.controls.pwd.errors.required"> This field is mandatory. </span>
+                    <span *ngIf="loginForm.controls.pwd.errors.pattern"> This field is invalid. </span>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" fxFlex>
+                <mat-label>User Role</mat-label>
+                <input matInput formControlName="role" required>
+                <mat-error *ngIf="loginForm.controls.role.touched && loginForm.controls.role.invalid">
+                    <span *ngIf="loginForm.controls.role.errors.required"> This field is mandatory. </span>
+                    <!-- <span *ngIf="loginForm.controls.userName.errors.pattern"> This field is invalid. </span> -->
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+    <button mat-raised-button color="primary" type ="submit" (click)="handleSubmit()"
+    [disabled]="!(loginForm.valid && loginForm.dirty)">Login</button>
+    <button mat-raised-button color="primary" mat-dialog-close>Close</button>
+</mat-dialog-actions>
+
+
+
+<!-- <div>
+    <div class="clearfix"> </div>
+    <div class="container"  [ngStyle]="{minHeight: '79vh'}">
+        <div class="row">
+        <div class="col-sm-4 mx-auto text-center"  [ngStyle]="{boxShadow: '0 0 2px 1px white'}">
+            <div class="card shadow" style="margin-top:50px">
+            <div class="card-body">
+                <img src="images/logo.png" alt="Company Logo"  style="width:200px" class="my-2 rounded-circle" />
+                <form autoComplete="off" class="mt-2">
+                <div class="form-group">
+                    <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-danger border-0 text-white">
+                        <i class="fas fa-user-tie"></i>
+                        </span>
+                    </div>
+                    <input type="text" required placeholder="User ID here" name="userid" value={user.userid} onChange=handleInput() class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-danger border-0 text-white">
+                        <i class="fas fa-key"> </i>
+                        </span>
+                    </div>
+                    <input required type="password" name="pwd" placeholder="Password here"  value={user.pwd} onChange=handleInput() class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-danger border-0 text-white">
+                        <i class="fas fa-key"></i>
+                        </span>
+                    </div>
+                    <select value={user.role} onChange=handleInput() required name="role" class="form-control">
+                        <option value="">Select Role</option>
+                        <option>Admin</option>
+                        <option>Customer</option>
+                    </select>
+                    </div>
+                </div>
+                <input type="submit" onClick=handleSubmit($event) defaultValue="Login" class="btn btn-danger btn-block" />
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div> -->
